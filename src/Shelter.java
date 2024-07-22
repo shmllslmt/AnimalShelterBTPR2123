@@ -16,6 +16,18 @@ public class Shelter {
         this.animals = new ArrayList<>();
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
     public void addAnimal(Animal animal) {
         if(animal != null) {
             animals.add(animal);

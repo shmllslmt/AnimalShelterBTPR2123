@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Date;
 
 public class Animal {
@@ -21,6 +22,7 @@ public class Animal {
     public void createAnimal() {
         shelter.addAnimal(this);
     }
+    // Overloading
     public void deleteAnimal() {
         shelter.removeAnimal(this);
     }
@@ -31,6 +33,27 @@ public class Animal {
         } else {
             System.out.println("Animal not found. Please try again.");
         }
+    }
+
+    public int calcRescuePeriod() {
+        Date today = new Date();
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(today);
+        int thisYear = cal.get(Calendar.YEAR);
+
+        return thisYear - yearRescue.getYear();
+    }
+
+    @Override
+    public String toString() {
+        return  "\nID = " + id +
+                "\nName = " + name +
+                "\nSize = " + size +
+                "\nAge = " + age +
+                "\nYear Rescue = " + yearRescue +
+                "\nHas Sponsor = " + hasSponsor +
+                "\nShelter = " + shelter.getName();
     }
     public String getId() {
         return id;
